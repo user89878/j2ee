@@ -58,6 +58,40 @@ public class InscriptionAnnuelle {
 	@ManyToOne
 	@JoinColumn(name = "idEtudiant")
 	private Etudiant etudiant;
+	public InscriptionAnnuelle(long id,int annee,String type,int etat, int rang,String validation,String mention,String plusInfos,Etudiant e,Niveau v){
+		this.idInscription=id;
+		this.annee=annee;
+		this.etat=etat;
+		this.type=type;
+		this.rang=rang;
+		this.validation=validation;
+		this.mention=mention;
+		this.plusInfos=plusInfos;
+		this.etudiant=e;
+		this.niveau=v;
+
+
+
+	}
+	public InscriptionAnnuelle(int annee,String type,int etat, int rang,String validation,String mention,String plusInfos,Etudiant e,Niveau v){
+
+		this.annee=annee;
+		this.etat=etat;
+		this.type=type;
+		this.rang=rang;
+		this.validation=validation;
+		this.mention=mention;
+		this.plusInfos=plusInfos;
+		this.etudiant=e;
+		this.niveau=v;
+
+
+
+	}
+
+	public InscriptionAnnuelle() {
+
+	}
 
 	public Long getIdInscription() {
 		return idInscription;

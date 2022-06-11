@@ -31,6 +31,23 @@ public class InscriptionModule {
 
 	public InscriptionModule() {
 	}
+	public InscriptionModule(Long id,double noteSN,double noteSR,double noteFinale,String validation,String plusInfos,Module m,InscriptionAnnuelle is) {
+		this.idInscriptionModule=id;
+		this.noteSN=noteSN;
+		this.noteSR=noteSR;
+		this.validation=validation;
+		this.plusInfos=plusInfos;
+		this.module=m;
+		this.inscriptionAnnuelle=is;
+	}
+	public InscriptionModule(double noteSN,double noteSR,double noteFinale,String validation,String plusInfos,Module m,InscriptionAnnuelle is) {
+		this.noteSN=noteSN;
+		this.noteSR=noteSR;
+		this.validation=validation;
+		this.plusInfos=plusInfos;
+		this.module=m;
+		this.inscriptionAnnuelle=is;
+	}
 
 	public Long getIdInscriptionModule() {
 		return idInscriptionModule;

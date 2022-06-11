@@ -7,23 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import com.ensah.core.bo.CadreAdministrateur;
-import com.ensah.core.bo.Compte;
 import com.ensah.core.bo.Enseignant;
 import com.ensah.core.bo.Etudiant;
 import com.ensah.core.bo.Utilisateur;
-import com.ensah.core.services.ICompteService;
 import com.ensah.core.services.IPersonService;
 import com.ensah.core.utils.ExcelExporter;
 import com.ensah.core.web.models.PersonModel;
-import com.ensah.core.web.models.UserAndAccountInfos;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -212,6 +204,7 @@ public class UtilisateurAdminController {
 			// Initialiser le modele avec la personne
 			model.addAttribute("personList", modelPersons);
 		}
+
 		return "admin/listPersons";
 	}
 
@@ -303,5 +296,12 @@ public class UtilisateurAdminController {
 		ExcelExporter excelExporter = personService.preparePersonExport(persons);
 
 		excelExporter.export(response);
+	}
+	@RequestMapping("/import/excel")
+	@ResponseBody
+	public String importFromExcel() {
+		Utilisateur ul=personService.getPersonByName("BOUDAA","Tarik");
+		System.out.println(ul.getNom()+" holla  "+ul.getEmail());
+		return "Import Successfully";
 	}
 }

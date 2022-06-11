@@ -18,8 +18,12 @@ public interface IPersonService {
 	public Utilisateur getPersonById(Long id);
 	
 	public Utilisateur getPersonByCin(String cin);
+
+	public Utilisateur getPersonByName(String Name,String prenom);
 	
 	public ExcelExporter preparePersonExport(List<Utilisateur> persons);
+
+	public Integer getid(String name);
 	
 	
 

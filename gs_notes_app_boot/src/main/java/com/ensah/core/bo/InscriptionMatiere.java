@@ -34,6 +34,31 @@ public class InscriptionMatiere {
 
 	public InscriptionMatiere() {
 	}
+	public InscriptionMatiere(double noteSN,double noteSR, double noteFinale,String validation,String plusInfos, double coefficient,Element e,InscriptionAnnuelle b) {
+	this.noteSN=noteSN;
+	this.noteSR=noteSR;
+	this.noteFinale=noteFinale;
+	this.validation=validation;
+	this.plusInfos=plusInfos;
+	this.coefficient=coefficient;
+	this.matiere=e;
+	this.inscriptionAnnuelle=b;
+
+
+	}
+	public InscriptionMatiere(long id,double noteSN,double noteSR, double noteFinale,String validation,String plusInfos, double coefficient,Element e,InscriptionAnnuelle b) {
+		this.idInscriptionMatiere=id;
+		this.noteSN=noteSN;
+		this.noteSR=noteSR;
+		this.noteFinale=noteFinale;
+		this.validation=validation;
+		this.plusInfos=plusInfos;
+		this.coefficient=coefficient;
+		this.matiere=e;
+		this.inscriptionAnnuelle=b;
+
+
+	}
 
 	public Long getIdInscriptionMatiere() {
 		return idInscriptionMatiere;
